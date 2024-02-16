@@ -1,0 +1,16 @@
+<h2>My first Angular App To-Do App</h2>
+
+<input type="text" [(ngModel)]="newTask" (keyup.enter)="addTask()" />
+
+<button (click)="addTask()">Add Task</button>
+<ul>
+  <!-- *ngFor: Structural directive that repeats the <li> element for each task in the 'tasks' array.
+       - 'let task of tasks': Declares a local variable 'task' for each iteration, which holds the current task item.
+       - 'let i = index': Declares a local variable 'i' that holds the current index of the item in the iteration. -->
+   
+  <li *ngFor="let task of tasks; let i = index">
+    {{ task }}
+
+    <button (click)="deleteTask(i)">Delete</button>
+  </li>
+</ul>
